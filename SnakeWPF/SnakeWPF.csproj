@@ -100,5 +100,10 @@
       <Name>Common</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\apple.png" />
+    <Resource Include="Image\background_2.png" />
+    <Resource Include="Image\background_3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
