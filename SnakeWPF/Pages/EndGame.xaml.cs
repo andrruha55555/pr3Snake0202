@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace SnakeWPF.Pages
 {
@@ -23,6 +24,21 @@ namespace SnakeWPF.Pages
         public EndGame()
         {
             InitializeComponent();
+            name.Content = MainWindow.mainWindow.ViewModelUserSettings.Name;
+            top.Content = MainWindow.mainWindow.ViewModelGames.Top; //?
+            glasses.Content = $"{MainWindow.mainWindow.ViewModelGames.SnakesPlayers.Points.Count - 3} glasses";
+            MainWindow.mainWindow.receivingUdpClient.Close();
+            MainWindow.mainWindow.tRec.Abort();
+            MainWindow.mainWindow.ViewModelGames = null;
+        }
+        /// <summary>
+        ///  Переход на начальную страницу
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OpenHome(object sender, RoutedEventArgs e)
+        {
+            MainWindow.mainWindow.OpenPage(MainWindow.mainWindow.Home);
         }
     }
 }
