@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Commonn;
 using Newtonsoft.Json;
 using System.Threading;
+using System.IO;
 
 namespace pr3Snake0202
 {
@@ -206,6 +207,13 @@ namespace pr3Snake0202
                 }
                 Send();
             }
+        }
+        public static void SaveLeaders()
+        {
+            string json = JsonConvert.SerializeObject(Leaders);
+            StreamWriter SW = new StreamWriter("./leaders.txt");
+            SW.WriteLine(json);
+            SW.Close();
         }
         static void Main(string[] args)
         {
