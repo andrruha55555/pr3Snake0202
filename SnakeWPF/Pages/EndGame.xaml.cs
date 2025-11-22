@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Xml.Linq;
+using Newtonsoft.Json;
+using Commonn;
 
 namespace SnakeWPF.Pages
 {
@@ -31,11 +33,7 @@ namespace SnakeWPF.Pages
             MainWindow.mainWindow.tRec.Abort();
             MainWindow.mainWindow.ViewModelGames = null;
         }
-        /// <summary>
-        ///  Переход на начальную страницу
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
         private void OpenHome(object sender, RoutedEventArgs e)
         {
             MainWindow.mainWindow.OpenPage(MainWindow.mainWindow.Home);
